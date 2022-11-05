@@ -31,7 +31,7 @@ const Form = () => {
         boxSizing: 'border-box',
       }}
     >
-      <Box>
+      <Box height='350px'>
         <Typography variant='h1' color='white' sx={{ fontSize: '32px', marginBottom: '28px' }}>
           Увійти
         </Typography>
@@ -42,7 +42,7 @@ const Form = () => {
             fullWidth
             style={{ background: '#333', marginBottom: '16px', borderRadius: '4px' }}
             InputLabelProps={{
-              style: { color: '#8c8c8c', fontSize: '16px'},
+              style: { color: '#8c8c8c', fontSize: '16px' },
             }}
             InputProps={{ disableUnderline: true }}
           />
@@ -53,7 +53,7 @@ const Form = () => {
             type='password'
             style={{ background: '#333', marginBottom: '16px', borderRadius: '4px', color: '#fff' }}
             InputLabelProps={{
-              style: { color: '#8c8c8c', fontSize: '16px'},
+              style: { color: '#8c8c8c', fontSize: '16px' },
             }}
             InputProps={{ disableUnderline: true }}
           />
@@ -67,16 +67,20 @@ const Form = () => {
             Увійти
           </StyledButton>
           <Box display='flex'
-          justifyContent='space-between'
-           alignItems='center'
-           >
+            justifyContent='space-between'
+            alignItems='center'
+          >
             <FormControlLabel
               label={'Запам’ятати мене'}
-              sx={{color: '#b3b3b3', '& .MuiFormControlLabel-label': { fontSize: '13px' } }}
+              sx={{ color: '#b3b3b3', '& .MuiFormControlLabel-label': { fontSize: '13px' } }}
               control={<Checkbox
                 checked={checked}
                 onChange={handleChange}
                 disableRipple
+                sx={{
+                  "&.MuiButtonBase-root": { color: '#737373' },
+                  "& .MuiSvgIcon-root": { fontSize: '18px' }
+                }}
               />}
             />
 
@@ -85,12 +89,30 @@ const Form = () => {
               variant='subtitle1'
               component="span"
               underline='hover'
-              sx={{color: '#b3b3b3', fontSize: '13px'}}
+              sx={{ color: '#b3b3b3', fontSize: '13px' }}
             >
               Потрібна допомога?
             </Link>
           </Box>
         </form>
+      </Box>
+      <Box marginTop='16px'>
+        <Typography
+          component='span'
+          sx={{color: '#737373', fontSize: '16px', marginRight: '5px'}}
+        >
+          Уперше на Netflix?
+        </Typography>
+
+        <Link
+          href='#'
+          variant='subtitle1'
+          component="span"
+          underline='hover'
+          sx={{color: '#fff', fontSize: '16px'}}
+        >
+          Зареєструватися.
+        </Link>
       </Box>
     </Box>
   )
