@@ -33,7 +33,7 @@ const Footer = () => {
               variant='subtitle1'
               component="span"
               underline='hover'
-              sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px'}}
+              sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
             >
               Поширені запитання
             </Link>
@@ -66,7 +66,7 @@ const Footer = () => {
               variant='subtitle1'
               component="span"
               underline='hover'
-              sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px'}}
+              sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
             >
               Конфіденційність
             </Link>

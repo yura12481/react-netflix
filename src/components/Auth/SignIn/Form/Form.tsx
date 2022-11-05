@@ -1,11 +1,14 @@
 import React from 'react'
 import Box from '@mui/material/Box';
+import { Formik } from 'formik';
+import * as  yup  from 'yup'
 import { Button, TextField, Typography, Link } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/system';
 import { useState } from 'react';
 
+///////////////////////////////////////////Styles MUI
 
 const StyledInput = styled(TextField)({
   input: {
@@ -27,12 +30,15 @@ const ToogleButton = styled(Button)({
     fontSize: '13px',
   }
 })
-
+///////////////////////////////////////////////Styles MUI END
 
 const Form = () => {
+////////////////////////////// STATE
   const [checked, setChecked] = useState(true);
   let [toogleBtn, setToogleBtn] = useState(true);
+////////////////////////////// STATE END
 
+///////////////////////////////////////////////HANDLE
   const handleClick = () => {
     setToogleBtn(toogleBtn = false)
   }
@@ -40,6 +46,16 @@ const Form = () => {
   const handleChange = (e: any) => {
     setChecked(e.target.checked)
   }
+///////////////////////////////////////////////HANDLE END
+
+///////////////////////////////////////////////FORMIK
+interface MyFormValues {
+  email: string;
+}
+
+// const formik:any = useFormik({
+  
+// })
 
   return (
     <Box

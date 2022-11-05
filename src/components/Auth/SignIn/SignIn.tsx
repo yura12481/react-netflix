@@ -7,9 +7,9 @@ import style from './SignIn.module.css'
 const SignIn = () => {
   return (
     <div className={style.authWrapper}>
-      <Header/>
-      <Form/>
-      <Footer/>
+      <Header />
+      <Form />
+      <Footer />
     </div>
   )
 }
