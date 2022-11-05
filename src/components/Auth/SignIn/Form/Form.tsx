@@ -6,15 +6,36 @@ import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/system';
 import { useState } from 'react';
 
-const StyledButton = styled(Button)`
-  &:hover {
-    background: red;
+
+const StyledInput = styled(TextField)({
+  input: {
+    color: '#fff',
   }
-`
+})
+
+const ToogleButton = styled(Button)({
+  textTransform: 'none',
+  padding: '0',
+  backgroundColor: 'none',
+  '&:hover': {
+    backgroundColor: 'transparent',
+    textDecoration: 'none'
+  },
+
+  "&.MuiButtonBase-root": {
+    color: '#0071eb',
+    fontSize: '13px',
+  }
+})
+
 
 const Form = () => {
   const [checked, setChecked] = useState(true);
+  let [toogleBtn, setToogleBtn] = useState(true);
 
+  const handleClick = () => {
+    setToogleBtn(toogleBtn = false)
+  }
 
   const handleChange = (e: any) => {
     setChecked(e.target.checked)
@@ -36,7 +57,7 @@ const Form = () => {
           Увійти
         </Typography>
         <form>
-          <TextField
+          <StyledInput
             label="Адреса електронної пошти"
             variant="standard"
             fullWidth
@@ -46,26 +67,31 @@ const Form = () => {
             }}
             InputProps={{ disableUnderline: true }}
           />
-          <TextField
+          <StyledInput
             label="Пароль"
             variant="standard"
             fullWidth
             type='password'
-            style={{ background: '#333', marginBottom: '16px', borderRadius: '4px', color: '#fff' }}
+            sx={{ background: '#333', marginBottom: '16px', borderRadius: '4px', color: 'white' }}
             InputLabelProps={{
-              style: { color: '#8c8c8c', fontSize: '16px' },
+              style: { color: '#8c8c8c', fontSize: '16px' }
             }}
             InputProps={{ disableUnderline: true }}
+
           />
-          <StyledButton
+          <Button
             variant="contained"
             fullWidth
             disableRipple
-            sx={{ height: '50px', marginTop: '24px', marginBottom: '12px', background: 'red' }}
+            sx={{
+              height: '50px', marginTop: '24px', marginBottom: '12px', background: 'red', "&:hover": {
+                background: 'red'
+              }
+            }}
             type={'submit'}
           >
             Увійти
-          </StyledButton>
+          </Button>
           <Box display='flex'
             justifyContent='space-between'
             alignItems='center'
@@ -99,7 +125,7 @@ const Form = () => {
       <Box marginTop='16px'>
         <Typography
           component='span'
-          sx={{color: '#737373', fontSize: '16px', marginRight: '5px'}}
+          sx={{ color: '#737373', fontSize: '16px', marginRight: '5px' }}
         >
           Уперше на Netflix?
         </Typography>
@@ -109,10 +135,55 @@ const Form = () => {
           variant='subtitle1'
           component="span"
           underline='hover'
-          sx={{color: '#fff', fontSize: '16px'}}
+          sx={{ color: '#fff', fontSize: '16px', cursor: 'pointer' }}
         >
           Зареєструватися.
         </Link>
+      </Box>
+      <Box marginTop='11px'>
+        <Typography
+          component='span'
+          sx={{ color: '#8c8c8c', fontSize: '13px' }}
+        >
+          Щоб переконатися, що ви не бот, сторінка захищена системою Google reCAPTCHA.
+        </Typography>
+        <ToogleButton
+          disableRipple
+          onClick={handleClick}
+        >
+          {toogleBtn ?
+            <Typography component="div" sx={{
+              fontSize: '13px',
+              '&:hover': {
+                cursor: 'pointer',
+                textDecoration: 'underline'
+              },
+            }}
+            >
+              Докладніше
+            </Typography>
+            :
+            <Typography sx={{
+              marginTop: '13px',
+              "&.MuiTypography-root": {
+                color: '#8c8c8c',
+                fontSize: '13px',
+                textAlign: 'left',
+                '&:hover': {
+                  cursor: 'auto',
+                  textDecoration: 'none'
+                },
+              }
+            }}
+            >
+              Інформація, яку збирає система Google reCAPTCHA, регулюється Політикою конфіденційності й
+              Умовами використання Google. Ці дані використовуються, щоб надавати, підтримувати й
+              покращувати сервіс reCAPTCHA, а також у цілях загальної безпеки
+              (Google не застосовуватиме їх для персоналізації реклами).
+            </Typography>
+          }
+
+        </ToogleButton>
       </Box>
     </Box>
   )
