@@ -1,8 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import { Button, TextField, Typography, Link } from '@mui/material';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/system';
 import { useState } from 'react';
@@ -17,7 +16,7 @@ const Form = () => {
   const [checked, setChecked] = useState(true);
 
 
-  const handleButton = (e:any) => {
+  const handleChange = (e: any) => {
     setChecked(e.target.checked)
   }
 
@@ -42,27 +41,54 @@ const Form = () => {
             variant="standard"
             fullWidth
             style={{ background: '#333', marginBottom: '16px', borderRadius: '4px' }}
+            InputLabelProps={{
+              style: { color: '#8c8c8c', fontSize: '16px'},
+            }}
+            InputProps={{ disableUnderline: true }}
           />
           <TextField
-            label="Адреса електронної пошти"
+            label="Пароль"
             variant="standard"
             fullWidth
-            style={{ background: '#333', marginBottom: '16px', borderRadius: '4px' }}
+            type='password'
+            style={{ background: '#333', marginBottom: '16px', borderRadius: '4px', color: '#fff' }}
+            InputLabelProps={{
+              style: { color: '#8c8c8c', fontSize: '16px'},
+            }}
+            InputProps={{ disableUnderline: true }}
           />
           <StyledButton
             variant="contained"
             fullWidth
             disableRipple
             sx={{ height: '50px', marginTop: '24px', marginBottom: '12px', background: 'red' }}
+            type={'submit'}
           >
             Увійти
           </StyledButton>
-          <Box>
-            <Checkbox 
-            defaultChecked 
-            color="info"
-            onChange={handleButton} 
+          <Box display='flex'
+          justifyContent='space-between'
+           alignItems='center'
+           >
+            <FormControlLabel
+              label={'Запам’ятати мене'}
+              sx={{color: '#b3b3b3', '& .MuiFormControlLabel-label': { fontSize: '13px' } }}
+              control={<Checkbox
+                checked={checked}
+                onChange={handleChange}
+                disableRipple
+              />}
             />
+
+            <Link
+              href='#'
+              variant='subtitle1'
+              component="span"
+              underline='hover'
+              sx={{color: '#b3b3b3', fontSize: '13px'}}
+            >
+              Потрібна допомога?
+            </Link>
           </Box>
         </form>
       </Box>
