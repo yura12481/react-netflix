@@ -50,6 +50,7 @@ const Form = () => {
         margin: '0 auto',
         padding: '60px 68px 40px',
         boxSizing: 'border-box',
+        marginBottom: '90px'
       }}
     >
       <Box height='350px'>
