@@ -8,7 +8,7 @@ const Header = () => {
       <Box
         component="img"
         sx={{ width: '167px', height: '90px', marginLeft: '5px' }}
-        alt="The house from the offer."
+        alt="Netflix-logo"
         src={logo}
       />
     </Box>
