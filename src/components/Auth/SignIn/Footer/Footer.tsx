@@ -1,21 +1,33 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import { Typography } from '@mui/material';
+import { Typography, Link, Grid } from '@mui/material';
 
 const Footer = () => {
   return (
     <Box
-    sx={{
-      background: 'rgba(0,0,0,.75)', 
-      width: '100%', 
-      height: '258px',
-    }}
+      sx={{
+        background: 'rgba(0,0,0,.75)',
+        width: '100%',
+        maxHeight: '258px',
+        padding: '30px 0'
+      }}
     >
-      <Typography component='div'
-      sx={{maxWidth: '1000px', margin: '0 auto'}}
+      <Typography component='p'
+        sx={{ maxWidth: '1000px', margin: '0 auto', color: '#737373', marginBottom: '30px'}}
       >
-        a ebaniy rot sykaa
+        Маєте запитання? Зателефонуйте за номером
+        <Link
+          color='inherit'
+          href='tel:0800-509-416'
+          underline='hover'
+          marginLeft='5px'
+        >
+           0800-509-416
+        </Link>
       </Typography>
+      <Grid container spacing={2}>
+        
+      </Grid>
     </Box>
   )
 }
