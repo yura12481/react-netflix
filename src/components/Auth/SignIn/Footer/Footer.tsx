@@ -13,7 +13,7 @@ const Footer = () => {
       }}
     >
       <Typography component='p'
-        sx={{ maxWidth: '1000px', margin: '0 auto', color: '#737373', marginBottom: '30px'}}
+        sx={{ maxWidth: '1000px', margin: '0 auto', color: '#737373', marginBottom: '30px' }}
       >
         Маєте запитання? Зателефонуйте за номером
         <Link
@@ -22,12 +22,79 @@ const Footer = () => {
           underline='hover'
           marginLeft='5px'
         >
-           0800-509-416
+          0800-509-416
         </Link>
       </Typography>
-      <Grid container spacing={2}>
-        
-      </Grid>
+      <Box sx={{ maxWidth: '1000px', margin: '0 auto', }}>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 12, sm: 2, md: 3 }}>
+          <Grid item xs={3}>
+            <Link
+              href='#'
+              variant='subtitle1'
+              component="span"
+              underline='hover'
+              sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px'}}
+            >
+              Поширені запитання
+            </Link>
+          </Grid>
+          <Grid item xs={3}>
+            <Link
+              href='#'
+              variant='subtitle1'
+              component="span"
+              underline='hover'
+              sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
+            >
+              Довідковий центр
+            </Link>
+          </Grid>
+          <Grid item xs={3}>
+            <Link
+              href='#'
+              variant='subtitle1'
+              component="span"
+              underline='hover'
+              sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
+            >
+              Умови використання
+            </Link>
+          </Grid>
+          <Grid item xs={3}>
+            <Link
+              href='#'
+              variant='subtitle1'
+              component="span"
+              underline='hover'
+              sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px'}}
+            >
+              Конфіденційність
+            </Link>
+          </Grid>
+          <Grid item xs={3}>
+            <Link
+              href='#'
+              variant='subtitle1'
+              component="span"
+              underline='hover'
+              sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
+            >
+              Налаштування файлів cookie
+            </Link>
+          </Grid>
+          <Grid item xs={3}>
+            <Link
+              href='#'
+              variant='subtitle1'
+              component="span"
+              underline='hover'
+              sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
+            >
+              Корпоративна інформація
+            </Link>
+          </Grid>
+        </Grid>
+      </Box>
     </Box>
   )
 }
