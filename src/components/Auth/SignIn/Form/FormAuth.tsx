@@ -1,12 +1,12 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import { Formik } from 'formik';
-import * as  yup  from 'yup'
+import { useFormik} from 'formik';
 import { Button, TextField, Typography, Link } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/system';
 import { useState } from 'react';
+import { validationSchema } from '../Validations/validationSchema';
 
 ///////////////////////////////////////////Styles MUI
 
@@ -32,13 +32,13 @@ const ToogleButton = styled(Button)({
 })
 ///////////////////////////////////////////////Styles MUI END
 
-const Form = () => {
-////////////////////////////// STATE
+const FormAuth = () => {
+  ////////////////////////////// STATE
   const [checked, setChecked] = useState(true);
   let [toogleBtn, setToogleBtn] = useState(true);
-////////////////////////////// STATE END
+  ////////////////////////////// STATE END
 
-///////////////////////////////////////////////HANDLE
+  ///////////////////////////////////////////////HANDLE
   const handleClick = () => {
     setToogleBtn(toogleBtn = false)
   }
@@ -46,16 +46,20 @@ const Form = () => {
   const handleChange = (e: any) => {
     setChecked(e.target.checked)
   }
-///////////////////////////////////////////////HANDLE END
+  ///////////////////////////////////////////////HANDLE END
 
-///////////////////////////////////////////////FORMIK
-interface MyFormValues {
-  email: string;
-}
+  ///////////////////////////////////////////////FORMIK
 
-// const formik:any = useFormik({
-  
-// })
+  const formik:any = useFormik({
+    initialValues: {
+      email: '',
+      password: ''
+    },
+    onSubmit: (values) => {
+      console.log(JSON.stringify(values))
+    },
+    validationSchema: validationSchema
+  })
 
   return (
     <Box
@@ -73,27 +77,38 @@ interface MyFormValues {
         <Typography variant='h1' color='white' sx={{ fontSize: '32px', marginBottom: '28px' }}>
           Увійти
         </Typography>
-        <form>
+
+        <form onSubmit={formik.handleSubmit}>
           <StyledInput
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            name='email'
             label="Адреса електронної пошти"
             variant="standard"
+            color='success'
             fullWidth
             style={{ background: '#333', marginBottom: '16px', borderRadius: '4px' }}
             InputLabelProps={{
               style: { color: '#8c8c8c', fontSize: '16px' },
             }}
-            InputProps={{ disableUnderline: true }}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
           />
           <StyledInput
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            name='password'
             label="Пароль"
             variant="standard"
+            color='success'
             fullWidth
             type='password'
             sx={{ background: '#333', marginBottom: '16px', borderRadius: '4px', color: 'white' }}
             InputLabelProps={{
-              style: { color: '#8c8c8c', fontSize: '16px' }
+              style: { color: '#8c8c8c', fontSize: '16px', alignItems: 'center' }
             }}
-            InputProps={{ disableUnderline: true }}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
 
           />
           <Button
@@ -105,7 +120,7 @@ interface MyFormValues {
                 background: 'red'
               }
             }}
-            type={'submit'}
+            type='submit'
           >
             Увійти
           </Button>
@@ -138,6 +153,7 @@ interface MyFormValues {
             </Link>
           </Box>
         </form>
+
       </Box>
       <Box marginTop='16px'>
         <Typography
@@ -206,4 +222,4 @@ interface MyFormValues {
   )
 }
 
-export default Form
+export default FormAuth

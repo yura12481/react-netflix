@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from './Footer/Footer'
-import Form from './Form/Form'
+import FormAuth from './Form/FormAuth'
 import Header from './Header/Header'
 import style from './SignIn.module.css'
 
@@ -8,7 +8,7 @@ const SignIn = () => {
   return (
     <div className={style.authWrapper}>
       <Header />
-      <Form />
+      <FormAuth />
       <Footer />
     </div>
   )
