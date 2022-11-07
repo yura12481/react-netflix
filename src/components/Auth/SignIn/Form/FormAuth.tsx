@@ -50,7 +50,7 @@ const FormAuth = () => {
 
   ///////////////////////////////////////////////FORMIK
 
-  const formik:any = useFormik({
+  const formik = useFormik({
     initialValues: {
       email: '',
       password: ''
