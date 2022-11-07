@@ -1,6 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import { useFormik} from 'formik';
+import { Navigate } from 'react-router-dom'
+import { useFormik } from 'formik';
 import { Button, TextField, Typography, Link } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -13,7 +14,12 @@ import { validationSchema } from '../Validations/validationSchema';
 const StyledInput = styled(TextField)({
   input: {
     color: '#fff',
-  }
+    paddingLeft: '20px'
+  },
+
+  "& .MuiFormLabel-root": {
+    paddingLeft: '20px'
+  },
 })
 
 const ToogleButton = styled(Button)({
@@ -36,6 +42,7 @@ const FormAuth = () => {
   ////////////////////////////// STATE
   const [checked, setChecked] = useState(true);
   let [toogleBtn, setToogleBtn] = useState(true);
+  const [goToMainPage, setgoToMainPage] = useState(false);
   ////////////////////////////// STATE END
 
   ///////////////////////////////////////////////HANDLE
@@ -46,6 +53,7 @@ const FormAuth = () => {
   const handleChange = (e: any) => {
     setChecked(e.target.checked)
   }
+
   ///////////////////////////////////////////////HANDLE END
 
   ///////////////////////////////////////////////FORMIK
@@ -60,7 +68,10 @@ const FormAuth = () => {
     },
     validationSchema: validationSchema
   })
-
+  /////////////////////////////////////// transition to main page
+  // if() {
+  //   return <Navigate to='/main' />
+  // }
   return (
     <Box
       sx={{
@@ -77,7 +88,6 @@ const FormAuth = () => {
         <Typography variant='h1' color='white' sx={{ fontSize: '32px', marginBottom: '28px' }}>
           Увійти
         </Typography>
-
         <form onSubmit={formik.handleSubmit}>
           <StyledInput
             value={formik.values.email}
@@ -121,9 +131,11 @@ const FormAuth = () => {
               }
             }}
             type='submit'
+            onClick={() => setgoToMainPage(true)}
           >
             Увійти
           </Button>
+
           <Box display='flex'
             justifyContent='space-between'
             alignItems='center'
