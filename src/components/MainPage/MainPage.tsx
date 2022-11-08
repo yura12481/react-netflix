@@ -1,10 +1,15 @@
-import React from 'react'
-import MainHeader from './MainHeader/MainHeader'
+import React from 'react';
+import MainHeader from './MainHeader/MainHeader';
+import style from './MainPage.module.css'
 
 const MainPage = () => {
   return (
-    <MainHeader/>
+    <>
+      <div className={style.authWrapper}>
+        <MainHeader />
+      </div>
+    </>
   )
 }
 
-export default MainPage
+export default MainPage;
