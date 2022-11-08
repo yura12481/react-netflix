@@ -1,8 +1,9 @@
 import React from 'react'
+import MainHeader from './MainHeader/MainHeader'
 
 const MainPage = () => {
   return (
-    <div>Es pidaras ya do this hueta</div>
+    <MainHeader/>
   )
 }
 

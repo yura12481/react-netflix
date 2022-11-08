@@ -14,7 +14,8 @@ const SelectStyled = styled(Select)({
     background: '#000000',
     color: '#737373',
     border: '1px solid #737373',
-    fontSize: '13px'
+    fontSize: '13px',
+    maxHeight: '48px'
   }
 })
 ///////////////////////////////////////////////Styles MUI END
@@ -125,7 +126,7 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Box>
-        <Box width='144px' height='48px' marginTop='30px' textAlign='center' alignItems='center'>
+        <Box width='144px' marginTop='30px' textAlign='center' alignItems='center'>
           <FormControl variant="filled" color='success' fullWidth >
             <SelectStyled displayEmpty value={selected} onChange={selectionChangeHandler}>
               <MenuItem disabled value=""><em>Мова</em></MenuItem>
