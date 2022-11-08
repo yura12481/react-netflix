@@ -68,9 +68,11 @@ const MainHeader = () => {
                         fullWidth
                         disableRipple
                         sx={{
+                            borderRadius: '3px',
                             width: '85px',
                             height: '35px',
-                            background: 'red', "&:hover": {
+                            background: 'red',
+                            "&:hover": {
                                 background: 'red'
                             },
                         }}
