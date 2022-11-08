@@ -1,6 +1,6 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
 import { Button, TextField, Typography, Link } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -9,8 +9,8 @@ import { styled } from '@mui/system';
 import { useState } from 'react';
 import { validationSchema } from '../Validations/validationSchema';
 
-///////////////////////////////////////////Styles MUI
 
+///////////////////////////////////////////Styles MUI
 const StyledInput = styled(TextField)({
   input: {
     color: '#fff',
@@ -38,11 +38,12 @@ const ToogleButton = styled(Button)({
 })
 ///////////////////////////////////////////////Styles MUI END
 
+
+
 const FormAuth = () => {
   ////////////////////////////// STATE
   const [checked, setChecked] = useState(true);
   let [toogleBtn, setToogleBtn] = useState(true);
-  const [goToMainPage, setgoToMainPage] = useState(false);
   ////////////////////////////// STATE END
 
   ///////////////////////////////////////////////HANDLE
@@ -57,21 +58,17 @@ const FormAuth = () => {
   ///////////////////////////////////////////////HANDLE END
 
   ///////////////////////////////////////////////FORMIK
-
+  const navigate = useNavigate()
   const formik = useFormik({
     initialValues: {
       email: '',
       password: ''
     },
-    onSubmit: (values) => {
-      console.log(JSON.stringify(values))
+    onSubmit: () => {
+      navigate('/main-netflix')
     },
     validationSchema: validationSchema
   })
-  /////////////////////////////////////// transition to main page
-  // if() {
-  //   return <Navigate to='/main' />
-  // }
   return (
     <Box
       sx={{
@@ -126,12 +123,14 @@ const FormAuth = () => {
             fullWidth
             disableRipple
             sx={{
-              height: '50px', marginTop: '24px', marginBottom: '12px', background: 'red', "&:hover": {
+              height: '50px',
+              marginTop: '24px',
+              marginBottom: '12px',
+              background: 'red', "&:hover": {
                 background: 'red'
-              }
+              },
             }}
             type='submit'
-            onClick={() => setgoToMainPage(true)}
           >
             Увійти
           </Button>
