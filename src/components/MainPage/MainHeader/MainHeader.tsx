@@ -54,7 +54,7 @@ const MainHeader = () => {
             />
             <Box alignItems='center' display='flex'>
                 <Box width='120px' textAlign='center' marginRight='32px'>
-                    <FormControl variant="filled" color='success' fullWidth >
+                    <FormControl variant="filled" fullWidth >
                         <SelectStyled displayEmpty value={selected} onChange={selectionChangeHandler}>
                             <MenuItem disabled value=""><em>Українська</em></MenuItem>
                             <MenuItem value={1}>Українська</MenuItem>
@@ -69,7 +69,7 @@ const MainHeader = () => {
                         disableRipple
                         sx={{
                             width: '85px',
-                            height: '34px',
+                            height: '35px',
                             background: 'red', "&:hover": {
                                 background: 'red'
                             },

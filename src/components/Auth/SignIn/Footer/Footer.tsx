@@ -127,7 +127,7 @@ const Footer = () => {
           </Grid>
         </Box>
         <Box width='144px' marginTop='30px' textAlign='center' alignItems='center'>
-          <FormControl variant="filled" color='success' fullWidth >
+          <FormControl variant="filled" fullWidth >
             <SelectStyled displayEmpty value={selected} onChange={selectionChangeHandler}>
               <MenuItem disabled value=""><em>Мова</em></MenuItem>
               <MenuItem value={1}>Українська</MenuItem>
