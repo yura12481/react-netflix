@@ -1,9 +1,22 @@
 import React from 'react'
 import { Box, Typography, TextField, Button } from '@mui/material';
+import { useFormik } from 'formik';
+import { validationSchema } from './Validations/validationSchema';
 
 const InfoBlock = () => {
 ////////////////////////// FORMIK
+const formik = useFormik({
+  initialValues: {
+    email: '',
+  },
 
+  onSubmit: (values) => {
+    console.log(JSON.stringify(values))
+  },
+
+  validationSchema: validationSchema
+})
+////////////////////////// FORMIK END
 
   return (
     <Box
@@ -14,7 +27,7 @@ const InfoBlock = () => {
       <Box
         margin='0 auto'
         maxWidth='950px'
-        padding='85px 0'
+        padding='75px 0'
         position='relative'
         textAlign='center'
         width='100%'
@@ -37,12 +50,13 @@ const InfoBlock = () => {
         >
           Дивіться будь-де. Скасувати підписку можна будь-коли.
         </Typography>
-        <form style={{ paddingTop: '16px' }}>
+        <form style={{ paddingTop: '16px' }} onSubmit={formik.handleSubmit}>
           <Typography
             variant='h3'
             fontWeight='400'
             fontSize='19px'
             padding='0 5%'
+            paddingBottom='20px'
           >
             Готові до перегляду? Введіть адресу електронної пошти, щоб оформити або поновити підписку.
           </Typography>
@@ -52,12 +66,20 @@ const InfoBlock = () => {
               name='email'
               variant="outlined"
               label='Адреса електронної пошти'
+              value={formik.values.email}
+              onChange={formik.handleChange}
               sx={{
-                width: '450px', background: '#fff', color: 'black',
-                "&.MuiFormLabel-root": {
-                  fontSize: '30px'
+                width: '450px', color: 'black', fontSize: '16px', 
+                "& .MuiInputBase-root": {
+                  background: '#fff',
+                },
+                "& .MuiFormHelperText-root" : {
+                  fontSize: '15px',
+                  color: '#ffa00a'
                 }
               }}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
             />
             <Button
               variant="contained"

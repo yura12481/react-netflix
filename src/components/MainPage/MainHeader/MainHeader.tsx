@@ -12,7 +12,8 @@ const SelectStyled = styled(Select)({
         color: 'white',
         border: '1px solid white',
         fontSize: '13px',
-        maxHeight: '37px'
+        maxHeight: '37px',
+        padding: '1px 0px 14px 5px'
     }
 });
 /////////////////////////////////////////// End Styles MUI

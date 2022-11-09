@@ -94,7 +94,7 @@ const FormAuth = () => {
             variant="standard"
             color='success'
             fullWidth
-            style={{ background: '#333', marginBottom: '16px', borderRadius: '4px' }}
+            style={{ background: '#333', marginBottom: '16px', borderRadius: '4px'}}
             InputLabelProps={{
               style: { color: '#8c8c8c', fontSize: '16px' },
             }}
