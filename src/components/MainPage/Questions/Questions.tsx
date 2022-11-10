@@ -1,23 +1,59 @@
 import React from 'react'
-import { Box, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import { Box, Typography, Accordion, AccordionSummary, AccordionDetails, TextField, Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
+import { useFormik } from 'formik';
+import { validationSchema } from '../InfoBlock/Validations/validationSchema';
 
 const Questions = () => {
-  // let [expanded, setExpanded] = useState<boolean>(false);
+  ////////////////////////// FORMIK
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+    },
+
+    onSubmit: (values) => {
+      console.log(JSON.stringify(values))
+    },
+
+    validationSchema: validationSchema
+  })
+  ////////////////////////// FORMIK END
+
+  /////////////////////////////////////////////////////////////// STATE
+  const [expanded, setExpanded] = useState<string | false>(false);
+  /////////////////////////////////////////////////////////////// STATE END
+
+  /////////////////////////////////////////////////////////////// HANDLE
+  const handleChange = (isExpanded: boolean, panel: string) => {
+    setExpanded(isExpanded ? panel : false)
+  }
+  /////////////////////////////////////////////////////////////// HANDLE END
   return (
     <>
       <Box className='container' padding='70px 45px' textAlign='center' alignItems='center'>
+        {/* Section one */}
         <Typography variant='h1' fontSize='3.125rem' fontWeight='500' marginBottom='52px'>
           Поширені запитання
         </Typography>
         <Box margin='8px auto' width='75%' maxWidth='815px'>
-          <Accordion sx={{ background: '#303030', color: '#fff' }}>
+          <Accordion
+            expanded={expanded === 'panel1'}
+            sx={{ background: '#303030', color: '#fff' }}
+            onChange={(event, isExpanded) => handleChange(isExpanded, 'panel1')}
+          >
             <AccordionSummary sx={{ height: '75px', borderBottom: '1px solid black' }}
               id="panel1a-header"
               aria-controls="panel1a-content"
-              expandIcon={<AddIcon />}
+              expandIcon={
+                expanded === 'panel1'
+                  ?
+                  <CloseIcon fontSize='large' sx={{ color: 'white' }} />
+                  :
+                  <AddIcon fontSize='large' sx={{ color: 'white' }}
+                  />
+              }
             >
               <Typography fontWeight='400' fontSize='26px'>Що таке Netflix?</Typography>
             </AccordionSummary>
@@ -40,11 +76,22 @@ const Questions = () => {
         {/* Section two */}
 
         <Box margin='8px auto' width='75%' maxWidth='815px'>
-          <Accordion sx={{ background: '#303030', color: '#fff', borderRadius: 'none' }}>
+          <Accordion
+            expanded={expanded === 'panel2'}
+            sx={{ background: '#303030', color: '#fff' }}
+            onChange={(event, isExpanded) => handleChange(isExpanded, 'panel2')}
+          >
             <AccordionSummary sx={{ height: '75px', borderBottom: '1px solid black' }}
-              id="panel1a-header"
-              aria-controls="panel1a-content"
-              expandIcon={<AddIcon />}
+              id="panel2a-header"
+              aria-controls="panel2a-content"
+              expandIcon={
+                expanded === 'panel2'
+                  ?
+                  <CloseIcon fontSize='large' sx={{ color: 'white' }} />
+                  :
+                  <AddIcon fontSize='large' sx={{ color: 'white' }}
+                  />
+              }
             >
               <Typography fontWeight='400' fontSize='26px'>Скільки коштує підписка Netflix?</Typography>
             </AccordionSummary>
@@ -62,11 +109,22 @@ const Questions = () => {
         {/* Section three */}
 
         <Box margin='8px auto' width='75%' maxWidth='815px'>
-          <Accordion sx={{ background: '#303030', color: '#fff' }}>
+          <Accordion
+            expanded={expanded === 'panel3'}
+            sx={{ background: '#303030', color: '#fff' }}
+            onChange={(event, isExpanded) => handleChange(isExpanded, 'panel3')}
+          >
             <AccordionSummary sx={{ height: '75px', borderBottom: '1px solid black' }}
-              id="panel1a-header"
-              aria-controls="panel1a-content"
-              expandIcon={<AddIcon />}
+              id="panel3a-header"
+              aria-controls="panel3a-content"
+              expandIcon={
+                expanded === 'panel3'
+                  ?
+                  <CloseIcon fontSize='large' sx={{ color: 'white' }} />
+                  :
+                  <AddIcon fontSize='large' sx={{ color: 'white' }}
+                  />
+              }
             >
               <Typography fontWeight='400' fontSize='26px'>Де можна дивитися контент?</Typography>
             </AccordionSummary>
@@ -91,11 +149,22 @@ const Questions = () => {
         {/* Section four */}
 
         <Box margin='8px auto' width='75%' maxWidth='815px'>
-          <Accordion sx={{ background: '#303030', color: '#fff' }}>
+          <Accordion
+            expanded={expanded === 'panel4'}
+            sx={{ background: '#303030', color: '#fff' }}
+            onChange={(event, isExpanded) => handleChange(isExpanded, 'panel4')}
+          >
             <AccordionSummary sx={{ height: '75px', borderBottom: '1px solid black' }}
-              id="panel1a-header"
-              aria-controls="panel1a-content"
-              expandIcon={<AddIcon />}
+              id="panel4a-header"
+              aria-controls="panel4a-content"
+              expandIcon={
+                expanded === 'panel4'
+                  ?
+                  <CloseIcon fontSize='large' sx={{ color: 'white' }} />
+                  :
+                  <AddIcon fontSize='large' sx={{ color: 'white' }}
+                  />
+              }
             >
               <Typography fontWeight='400' fontSize='26px'>Як скасувати підписку?</Typography>
             </AccordionSummary>
@@ -112,11 +181,22 @@ const Questions = () => {
         {/* Section five */}
 
         <Box margin='8px auto' width='75%' maxWidth='815px'>
-          <Accordion sx={{ background: '#303030', color: '#fff' }}>
+          <Accordion
+            expanded={expanded === 'panel5'}
+            sx={{ background: '#303030', color: '#fff' }}
+            onChange={(event, isExpanded) => handleChange(isExpanded, 'panel5')}
+          >
             <AccordionSummary sx={{ height: '75px', borderBottom: '1px solid black' }}
-              id="panel1a-header"
-              aria-controls="panel1a-content"
-              expandIcon={<AddIcon />}
+              id="panel5a-header"
+              aria-controls="panel5a-content"
+              expandIcon={
+                expanded === 'panel5'
+                  ?
+                  <CloseIcon fontSize='large' sx={{ color: 'white' }} />
+                  :
+                  <AddIcon fontSize='large' sx={{ color: 'white' }}
+                  />
+              }
             >
               <Typography fontWeight='400' fontSize='26px'>Що можна подивитися на Netflix?</Typography>
             </AccordionSummary>
@@ -134,11 +214,22 @@ const Questions = () => {
         {/* Section six */}
 
         <Box margin='8px auto' width='75%' maxWidth='815px'>
-          <Accordion sx={{ background: '#303030', color: '#fff' }}>
+          <Accordion
+            expanded={expanded === 'panel6'}
+            sx={{ background: '#303030', color: '#fff' }}
+            onChange={(event, isExpanded) => handleChange(isExpanded, 'panel6')}
+          >
             <AccordionSummary sx={{ height: '75px', borderBottom: '1px solid black' }}
-              id="panel1a-header"
-              aria-controls="panel1a-content"
-              expandIcon={<AddIcon />}
+              id="panel6a-header"
+              aria-controls="panel6a-content"
+              expandIcon={
+                expanded === 'panel6'
+                  ?
+                  <CloseIcon fontSize='large' sx={{ color: 'white' }} />
+                  :
+                  <AddIcon fontSize='large' sx={{ color: 'white' }}
+                  />
+              }
             >
               <Typography fontWeight='400' fontSize='26px'>Netflix підходить для дітей?</Typography>
             </AccordionSummary>
@@ -159,12 +250,23 @@ const Questions = () => {
 
         {/* Section seven */}
 
-        <Box margin='8px auto' width='75%' maxWidth='815px'>
-          <Accordion sx={{ background: '#303030', color: '#fff' }}>
+        <Box margin='8px auto 52px' width='75%' maxWidth='815px'>
+          <Accordion
+            expanded={expanded === 'panel7'}
+            sx={{ background: '#303030', color: '#fff' }}
+            onChange={(event, isExpanded) => handleChange(isExpanded, 'panel7')}
+          >
             <AccordionSummary sx={{ height: '75px', borderBottom: '1px solid black' }}
-              id="panel1a-header"
-              aria-controls="panel1a-content"
-              expandIcon={<AddIcon />}
+              id="panel7a-header"
+              aria-controls="panel7a-content"
+              expandIcon={
+                expanded === 'panel7'
+                  ?
+                  <CloseIcon fontSize='large' sx={{ color: 'white' }} />
+                  :
+                  <AddIcon fontSize='large' sx={{ color: 'white' }}
+                  />
+              }
             >
               <Typography fontWeight='400' fontSize='26px'>Чому відображається текст цією мовою?</Typography>
             </AccordionSummary>
@@ -175,6 +277,58 @@ const Questions = () => {
             </AccordionDetails>
           </Accordion>
         </Box>
+        <form onSubmit={formik.handleSubmit}>
+          <Typography
+            variant='h3'
+            fontWeight='400'
+            fontSize='19px'
+            padding='0 5%'
+            paddingBottom='20px'
+            maxWidth='857px'
+            margin='0 auto'
+          >
+            Готові до перегляду? Введіть адресу електронної пошти, щоб оформити або поновити підписку.
+          </Typography>
+          <Box>
+            <TextField
+              id='email'
+              name='email'
+              variant="outlined"
+              label='Адреса електронної пошти'
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              sx={{
+                width: '450px', color: 'black', fontSize: '16px', 
+                "& .MuiInputBase-root": {
+                  background: '#fff',
+                },
+                "& .MuiFormHelperText-root" : {
+                  fontSize: '15px',
+                  color: '#ffa00a'
+                }
+              }}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
+            />
+            <Button
+              variant="contained"
+              fullWidth
+              sx={{
+                borderRadius: '3px',
+                fontSize: '23px',
+                width: '168px',
+                height: '56px',
+                background: 'red',
+                "&:hover": {
+                  background: 'red'
+                },
+              }}
+              type='submit'
+            >
+              Почати
+            </Button>
+          </Box>
+        </form>
       </Box>
     </>
   )
