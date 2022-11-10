@@ -3,6 +3,7 @@ import AnimationBlock from './AnimationBlock/AnimationBlock';
 import InfoBlock from './InfoBlock/InfoBlock';
 import MainHeader from './MainHeader/MainHeader';
 import style from './MainPage.module.css';
+import Questions from './Questions/Questions';
 
 const MainPage = () => {
   return (
@@ -13,6 +14,7 @@ const MainPage = () => {
       </div>
       <div className={style.secondaryWrapper}>
         <AnimationBlock />
+        <Questions />
       </div>
     </>
   )

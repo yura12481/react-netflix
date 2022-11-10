@@ -115,7 +115,7 @@ const AnimationBlock = () => {
                 height='64px'
                 marginRight='15px'
               />
-              <Box className='card-animation-text' marginRight='30%'>
+              <Box className='card-animation-text' marginRight='35%'>
                 <Box fontSize='1em' fontWeight='500'>Дивні дива</Box>
                 <Box fontSize='.9em' fontWeight='400' color='#0071eb'>Завантаження...</Box>
               </Box>

@@ -130,7 +130,7 @@ const Footer = () => {
         <Box width='144px' marginTop='30px'>
           <FormControl variant="filled" fullWidth >
             <SelectStyled displayEmpty value={selected} onChange={selectionChangeHandler}>
-              <MenuItem disabled value=""><em>Мова</em></MenuItem>
+              <MenuItem disabled value=""><em>Українська</em></MenuItem>
               <MenuItem value={1}>Українська</MenuItem>
               <MenuItem value={2}>English</MenuItem>
             </SelectStyled>
