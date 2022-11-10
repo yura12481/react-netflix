@@ -8,7 +8,7 @@ const ContainerBox = styled(Box)({
   maxWidth: '1000px',
   margin: '0 auto',
 })
-
+///////////////////////////////////////////////Styles MUI END
 const SelectStyled = styled(Select)({
   "&.MuiInputBase-root": {
     background: '#000000',
@@ -65,7 +65,7 @@ const Footer = () => {
                 variant='subtitle1'
                 component="span"
                 underline='hover'
-                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
+                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px 5px 5px 0' }}
               >
                 Поширені запитання
               </Link>
@@ -76,7 +76,7 @@ const Footer = () => {
                 variant='subtitle1'
                 component="span"
                 underline='hover'
-                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
+                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px 5px 5px 0' }}
               >
                 Довідковий центр
               </Link>
@@ -87,7 +87,7 @@ const Footer = () => {
                 variant='subtitle1'
                 component="span"
                 underline='hover'
-                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
+                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px 5px 5px 0'}}
               >
                 Умови використання
               </Link>
@@ -98,7 +98,7 @@ const Footer = () => {
                 variant='subtitle1'
                 component="span"
                 underline='hover'
-                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
+                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px 5px 5px 0' }}
               >
                 Конфіденційність
               </Link>
@@ -109,7 +109,7 @@ const Footer = () => {
                 variant='subtitle1'
                 component="span"
                 underline='hover'
-                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
+                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px 5px 5px 0' }}
               >
                 Налаштування файлів cookie
               </Link>
@@ -120,7 +120,7 @@ const Footer = () => {
                 variant='subtitle1'
                 component="span"
                 underline='hover'
-                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px' }}
+                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px 5px 5px 0' }}
               >
                 Корпоративна інформація
               </Link>

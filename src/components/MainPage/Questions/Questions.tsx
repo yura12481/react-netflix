@@ -32,7 +32,13 @@ const Questions = () => {
   /////////////////////////////////////////////////////////////// HANDLE END
   return (
     <>
-      <Box className='container' padding='70px 45px' textAlign='center' alignItems='center'>
+      <Box
+        className='container'
+        padding='70px 45px'
+        textAlign='center'
+        alignItems='center'
+        borderBottom='8px solid #222'
+      >
         {/* Section one */}
         <Typography variant='h1' fontSize='3.125rem' fontWeight='500' marginBottom='52px'>
           Поширені запитання
@@ -298,11 +304,11 @@ const Questions = () => {
               value={formik.values.email}
               onChange={formik.handleChange}
               sx={{
-                width: '450px', color: 'black', fontSize: '16px', 
+                width: '450px', color: 'black', fontSize: '16px',
                 "& .MuiInputBase-root": {
                   background: '#fff',
                 },
-                "& .MuiFormHelperText-root" : {
+                "& .MuiFormHelperText-root": {
                   fontSize: '15px',
                   color: '#ffa00a'
                 }
