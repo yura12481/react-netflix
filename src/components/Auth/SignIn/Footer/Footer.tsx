@@ -87,7 +87,7 @@ const Footer = () => {
                 variant='subtitle1'
                 component="span"
                 underline='hover'
-                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px 5px 5px 0'}}
+                sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer', padding: '5px 5px 5px 0' }}
               >
                 Умови використання
               </Link>

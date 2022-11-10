@@ -6,11 +6,11 @@ import MainPage from './components/MainPage/MainPage';
 
 function App() {
   return (
-      <Routes>
-        <Route path='/' element={<SignIn />} />
-        <Route path='/sign-in' element={<SignIn />} />
-        <Route path='/main-netflix' element={<MainPage />} />
-      </Routes>
+    <Routes>
+      <Route path='/' element={<SignIn />} />
+      <Route path='/sign-in' element={<SignIn />} />
+      <Route path='/main-netflix' element={<MainPage />} />
+    </Routes>
   );
 }
 

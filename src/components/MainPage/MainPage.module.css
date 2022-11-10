@@ -10,5 +10,5 @@
 .secondaryWrapper {
     background: #000;
     color: white;
-    height: max-content;
+    height: fit-content;
 }

@@ -224,7 +224,7 @@ const Footer = () => {
           </FormControl>
         </Box>
         <Typography component='p' marginTop='24px'>
-        Netflix Україна
+          Netflix Україна
         </Typography>
       </ContainerBox>
     </Box>

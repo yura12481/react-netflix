@@ -16,7 +16,7 @@ const MainPage = () => {
       <div className={style.secondaryWrapper}>
         <AnimationBlock />
         <Questions />
-        <Footer/>
+        <Footer />
       </div>
     </>
   )
