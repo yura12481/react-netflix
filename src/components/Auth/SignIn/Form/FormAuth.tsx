@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
@@ -48,24 +48,24 @@ const FormAuth = () => {
 
   ///////////////////////////////////////////////HANDLE
   const handleClick = () => {
-    setToogleBtn(toogleBtn = false)
+    setToogleBtn(toogleBtn = false);
   }
 
   const handleChange = (e: any) => {
-    setChecked(e.target.checked)
+    setChecked(e.target.checked);
   }
 
   ///////////////////////////////////////////////HANDLE END
 
   ///////////////////////////////////////////////FORMIK
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: '',
       password: ''
     },
     onSubmit: () => {
-      navigate('/main-netflix')
+      navigate('/main-netflix');
     },
     validationSchema: validationSchema
   })

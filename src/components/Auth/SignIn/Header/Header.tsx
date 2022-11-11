@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Box from '@mui/material/Box';
-import logo from './img/header-logo.png'
+import logo from './img/header-logo.png';
 
 const Header = () => {
   return (

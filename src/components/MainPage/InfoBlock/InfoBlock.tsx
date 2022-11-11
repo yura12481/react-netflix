@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Box, Typography, TextField, Button } from '@mui/material';
 import { useFormik } from 'formik';
 import { validationSchema } from './Validations/validationSchema';
@@ -11,7 +11,7 @@ const formik = useFormik({
   },
 
   onSubmit: (values) => {
-    console.log(JSON.stringify(values))
+    console.log(JSON.stringify(values));
   },
 
   validationSchema: validationSchema

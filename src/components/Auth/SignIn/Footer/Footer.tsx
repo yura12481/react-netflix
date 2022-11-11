@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Typography, Link, Grid, Box, MenuItem, FormControl, Select } from '@mui/material';
 import { styled } from '@mui/system';
 import { useState } from 'react';

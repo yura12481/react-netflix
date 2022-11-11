@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Box, Typography, Accordion, AccordionSummary, AccordionDetails, TextField, Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
@@ -14,7 +14,7 @@ const Questions = () => {
     },
 
     onSubmit: (values) => {
-      console.log(JSON.stringify(values))
+      console.log(JSON.stringify(values));
     },
 
     validationSchema: validationSchema
@@ -27,7 +27,7 @@ const Questions = () => {
 
   /////////////////////////////////////////////////////////////// HANDLE
   const handleChange = (isExpanded: boolean, panel: string) => {
-    setExpanded(isExpanded ? panel : false)
+    setExpanded(isExpanded ? panel : false);
   }
   /////////////////////////////////////////////////////////////// HANDLE END
   return (
@@ -340,4 +340,4 @@ const Questions = () => {
   )
 }
 
-export default Questions
+export default Questions;
