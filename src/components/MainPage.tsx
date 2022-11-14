@@ -160,9 +160,10 @@ const MainPage = () => {
                   width: '530px',
                 }}
                 alt="Netflix-Tv"
-                src=" https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
+                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
               />
-              <Box className='card-video' sx={{
+              <Box className='card-video' 
+              sx={{
                 height: '100%',
                 left: '50%',
                 maxHeight: '54%',
@@ -178,7 +179,7 @@ const MainPage = () => {
               </Box>
             </Box>
           </Box>
-        </Box >
+        </Box>
         {/* Animation section two */}
         <Box padding='70px 45px' className='card-wrapper' borderBottom='8px solid #222'>
           <Box
@@ -236,20 +237,20 @@ const MainPage = () => {
             </Box>
             <Box className='card-text' padding='0 0 0 3rem'>
               <Typography
+                className='card-title'
                 variant='h1'
                 fontSize='50px'
-                fontWeight='500'
-                className='card-title'
+                fontWeight='500'   
                 maxWidth='515px'
                 marginBottom='8px'
               >
                 Download your shows to watch offline.
               </Typography>
               <Typography
+                className='card-subtitle'
                 variant='h2'
                 fontSize='26px'
                 fontWeight='400'
-                className='card-subtitle'
                 maxWidth='547px'
                 marginTop='20px'
                 marginBottom='7px'
@@ -262,30 +263,30 @@ const MainPage = () => {
         {/* Animation section three */}
         <Box padding='70px 45px' className='card-wrapper' borderBottom='8px solid #222'>
           <Box
+            className='container'
             display='flex'
             justifyContent='space-between'
             alignItems='center'
             margin='0 auto'
-            maxWidth='1100px'
-            className='container'
+            maxWidth='1100px' 
             height='395px'
           >
             <Box className='card-text' paddingRight='48px'>
               <Typography
+                className='card-title'
                 variant='h1'
                 fontSize='50px'
-                fontWeight='500'
-                className='card-title'
+                fontWeight='500'               
                 maxWidth='547px'
                 marginBottom='8px'
               >
                 Watch everywhere.
               </Typography>
               <Typography
+                className='card-subtitle'
                 variant='h2'
                 fontSize='26px'
-                fontWeight='400'
-                className='card-subtitle'
+                fontWeight='400'              
                 maxWidth='547px'
                 marginTop='20px'
                 marginBottom='7px'
@@ -305,7 +306,8 @@ const MainPage = () => {
                 alt="Netflix-Tv"
                 src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
               />
-              <Box className='card-video' sx={{
+              <Box className='card-video' 
+                sx={{
                 height: '100%',
                 left: '50%',
                 maxHeight: '54%',
@@ -325,12 +327,12 @@ const MainPage = () => {
         {/* Animation section four */}
         <Box padding='70px 45px' className='card-wrapper' borderBottom='8px solid #222'>
           <Box
+            className='container'
             display='flex'
             justifyContent='space-between'
             alignItems='center'
             margin='0 auto'
             maxWidth='1100px'
-            className='container'
             height='322px'
             flex='0 1 auto'
           >
@@ -347,20 +349,20 @@ const MainPage = () => {
             </Box>
             <Box className='card-text' padding='0 0 0 3rem'>
               <Typography
+                className='card-title'
                 variant='h1'
                 fontSize='50px'
-                fontWeight='500'
-                className='card-title'
+                fontWeight='500'        
                 maxWidth='515px'
                 marginBottom='8px'
               >
                 Create profiles for kids.
               </Typography>
               <Typography
+                className='card-subtitle'
                 variant='h2'
                 fontSize='26px'
                 fontWeight='400'
-                className='card-subtitle'
                 maxWidth='531px'
                 marginTop='20px'
                 marginBottom='7px'
@@ -407,7 +409,7 @@ const MainPage = () => {
               <AccordionDetails sx={{ textAlign: 'left', padding: '1.2em' }}>
                 <Typography component='span' fontSize='26px' fontWeight='400'>
                   {item.subtitle}
-                  {item.text ? (<><br /><br />{item.text}</>) : null}
+                  {item.text ? (<><br/><br/>{item.text}</>) : null}
                 </Typography>
               </AccordionDetails>
             </Accordion>
