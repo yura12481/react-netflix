@@ -59,8 +59,8 @@ const Footer = () => {
             </Link>
           </Typography>
           <List disablePadding>
-            {listItems1.map(item => (
-              <ListItem key={item.text} 
+            {listItems1.map((item, index) => (
+              <ListItem key={index} 
               sx={{
                 display: 'inline-block',
                 width: '25%',
@@ -123,8 +123,8 @@ const Footer = () => {
           </Link>
         </Typography>
         <List disablePadding>
-          {listItems2.map(item => (
-            <ListItem key={item.text} 
+          {listItems2.map((item, index) => (
+            <ListItem key={index} 
             sx={{
               display: 'inline-block',
               width: '25%',
