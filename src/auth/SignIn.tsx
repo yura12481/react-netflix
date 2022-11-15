@@ -204,7 +204,7 @@ const SignIn = () => {
                     href='/'
                     component="a"
                     underline='hover'
-                    sx={{ color: '#fff', fontSize: '16px', cursor: 'pointer' }}
+                    sx={{ color: '#fff', fontSize: '16px' }}
                 >
                     Sign up now.
                 </Link>
