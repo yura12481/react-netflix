@@ -6,7 +6,7 @@ import style from './MainPageLayout.module.css';
 
 const MainPageLayout = () => {
   return (
-    <div className={style.background}>
+    <div className={style.mainPageWrapper}>
       <Header />
       <MainPage />
       <Footer />
