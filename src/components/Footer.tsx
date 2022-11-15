@@ -60,10 +60,10 @@ const Footer = () => {
           </Typography>
           <List disablePadding>
             {listItems1.map(item => (
-              <ListItem key={item.text} sx={{
+              <ListItem key={item.text} 
+              sx={{
                 display: 'inline-block',
                 width: '25%',
-                boxSizing: 'border-box',
                 padding: '0 12px 0 0',
                 marginBottom: '16px',
                 maxHeight: '16px'
@@ -73,7 +73,7 @@ const Footer = () => {
                     href={item.href}
                     component="a"
                     underline='hover'
-                    sx={{ color: '#737373', fontSize: '13px', cursor: 'pointer' }}
+                    sx={{ color: '#737373', fontSize: '13px' }}
                   >
                     {item.text}
                   </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
             ))}
           </List>
           <Box width='144px' marginTop='20px'>
-            <FormControl variant="filled" fullWidth >
+            <FormControl variant="filled" fullWidth>
               <Select
                 displayEmpty
                 value={selected}
@@ -124,10 +124,10 @@ const Footer = () => {
         </Typography>
         <List disablePadding>
           {listItems2.map(item => (
-            <ListItem key={item.text} sx={{
+            <ListItem key={item.text} 
+            sx={{
               display: 'inline-block',
               width: '25%',
-              boxSizing: 'border-box',
               padding: '0 12px 0 0',
               marginBottom: '16px',
               maxHeight: '16px'

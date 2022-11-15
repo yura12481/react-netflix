@@ -7,8 +7,8 @@ import { Button, TextField, Typography, Link, Box, FormControlLabel, Checkbox } 
 import axios from 'axios';
 
 ///////////////LOGIN DATA/////////////////
-// "email": "eve.holt@reqres.in",
-// "password": "cityslicka"
+// "email": "eve.holt@reqres.in"//////////
+// "password": "cityslicka"///////////////
 ///////////////LOGIN DATA/////////////////
 
 const SignIn = () => {
@@ -37,15 +37,15 @@ const SignIn = () => {
             })
                 .then(result => {
                     if (result) {
-                        navigate('/main-netflix')
+                        navigate('/main-netflix');
                     }
                 })
                 .catch(() => {
-                    alert('Incorrect password. Please try again.')
+                    alert('Incorrect email or password. Please try again.');
                 })
         },
         validationSchema: validationSchema
-    })         
+    })
     return (
         <Box
             sx={{
@@ -83,7 +83,7 @@ const SignIn = () => {
                             },
                             background: '#333',
                             marginBottom: '16px',
-                            borderRadius: '4px',
+                            borderRadius: '4px'
                         }}
                         value={formik.values.email}
                         onChange={formik.handleChange}
@@ -94,7 +94,7 @@ const SignIn = () => {
                         fullWidth
                         type='email'
                         InputLabelProps={{
-                            style: { borderBottomColor: 'none', color: '#8c8c8c', fontSize: '16px' },
+                            style: { color: '#8c8c8c', fontSize: '16px' }
                         }}
                         error={formik.touched.email && Boolean(formik.errors.email)}
                         helperText={formik.touched.email && formik.errors.email}
@@ -112,7 +112,7 @@ const SignIn = () => {
                             },
                             background: '#333',
                             marginBottom: '16px',
-                            borderRadius: '4px',
+                            borderRadius: '4px'
                         }}
                         value={formik.values.password}
                         onChange={formik.handleChange}
@@ -201,7 +201,7 @@ const SignIn = () => {
                     New to Netflix?
                 </Typography>
                 <Link
-                    href=''
+                    href='/'
                     component="a"
                     underline='hover'
                     sx={{ color: '#fff', fontSize: '16px', cursor: 'pointer' }}
@@ -229,25 +229,21 @@ const SignIn = () => {
                             },
                             "&.MuiButtonBase-root": {
                                 color: '#0071eb',
-                                fontSize: '13px',
+                                fontSize: '13px'
                             }
                         }}
                     >
                         Learn more.
                     </Button>
                     :
-                    <Typography sx={{
-                        marginTop: '13px',
-                        "&.MuiTypography-root": {
-                            color: '#8c8c8c',
-                            fontSize: '13px',
-                            textAlign: 'left',
-                            '&:hover': {
-                                cursor: 'auto',
-                                textDecoration: 'none'
-                            },
-                        }
-                    }}
+                    <Typography
+                        sx={{
+                            marginTop: '13px',
+                            "&.MuiTypography-root": {
+                                color: '#8c8c8c',
+                                fontSize: '13px',
+                            }
+                        }}
                     >
                         The information collected by Google reCAPTCHA is subject to the Google Privacy Policy and
                         Terms of Service, and is used for providing, maintaining,
