@@ -1,58 +1,68 @@
 import React from 'react';
 import { Box, Typography, TextField, Button } from '@mui/material';
-import * as  yup from 'yup';
+import * as yup from 'yup';
+import { SchemaOf } from 'yup';
 import { useFormik } from 'formik';
 
-const MainPageInputComponent = () => {
-  const validationSchema = yup.object({
-    email: yup.string()
+interface YupValidation {
+  email: string;
+}
+
+interface FormModel {
+  email: string;
+}
+
+const MainPageInputComponent: React.FC = () => {
+  const validationSchema: SchemaOf<YupValidation> = yup.object({
+    email: yup
+      .string()
       .email('Please enter a valid email address')
       .required('Email is required!'),
-  })
+  });
 
-  const formik = useFormik({
+  const formik = useFormik<FormModel>({
     initialValues: {
       email: '',
     },
     onSubmit: (values) => {
       console.log(JSON.stringify(values));
     },
-    validationSchema: validationSchema
-  })
+    validationSchema: validationSchema,
+  });
   return (
     <form style={{ paddingTop: '16px' }} onSubmit={formik.handleSubmit}>
       <Typography
-        variant='h3'
-        fontWeight='400'
-        fontSize='1.2rem'
-        padding='0 5%'
-        paddingBottom='20px'
+        variant="h3"
+        fontWeight="400"
+        fontSize="1.2rem"
+        padding="0 5%"
+        paddingBottom="20px"
       >
         Ready to watch? Enter your email to create or restart your membership.
       </Typography>
       <Box>
         <TextField
-          id='email'
-          name='email'
+          id="email"
+          name="email"
           variant="outlined"
-          label='Email address'
+          label="Email address"
           value={formik.values.email}
           onChange={formik.handleChange}
           InputLabelProps={{
-            style: { padding: '10px 10px 10px 0' }
+            style: { padding: '10px 10px 10px 0' },
           }}
           sx={{
             width: '500px',
             color: 'black',
             fontSize: '16px',
-            "& .MuiInputBase-root": {
+            '& .MuiInputBase-root': {
               background: '#fff',
-              height: '70px'
+              height: '70px',
             },
-            "& .MuiFormHelperText-root": {
+            '& .MuiFormHelperText-root': {
               fontSize: '15px',
-              color: '#ffa00a'
-            }
+              color: '#ffa00a',
+            },
           }}
           error={formik.touched.email && Boolean(formik.errors.email)}
           helperText={formik.touched.email && formik.errors.email}
@@ -66,17 +76,17 @@ const MainPageInputComponent = () => {
             width: '245px',
             height: '70px',
             background: 'red',
-            "&:hover": {
-              background: 'red'
+            '&:hover': {
+              background: 'red',
             },
           }}
-          type='submit'
+          type="submit"
         >
           Get Started
         </Button>
       </Box>
     </form>
-  )
-}
+  );
+};
 
 export default MainPageInputComponent;
